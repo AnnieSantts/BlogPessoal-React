@@ -1,26 +1,27 @@
 import React from 'react';
-import logo from './logo.svg';
+import Navbar from './componentes/estaticos/navbar/Navbar';
+import Footer from './componentes/estaticos/footer/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {Grid} from '@material-ui/core';
+import Home from './paginas/home/Home';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return(
+    <Router>
+        <Navbar />
+        <div style={{ minHeight: '100vh' }}>
+            <Routes> // Antigo Switch
+                <Route path="/" element={<Login />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/home" element={<Home />} />
+                <Route path="/cadastro" element={<CadastroUsuario />} />
+            </Routes>
+        </div>
+        <Footer />
+    </Router>
+)
+  
 }
 
 export default App;
