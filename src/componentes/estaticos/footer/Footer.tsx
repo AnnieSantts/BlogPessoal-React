@@ -5,6 +5,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Grid } from '@material-ui/core';
 import { Box } from '@mui/material';
 
+
 function Footer() {
     return (
         <>
