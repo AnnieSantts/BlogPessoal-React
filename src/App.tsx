@@ -8,30 +8,50 @@ import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import ListaTema from './componentes/temas/listatema/ListaTema';
 import ListaPostagem from './componentes/postagens/listapostagem/ListaPostagem';
+import CadastroPost from './componentes/postagens/cadastroPost/CadastroPost';
+import CadastroTema from './componentes/temas/cadastroTemas/CadastroTemas';
+import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
+import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
 
 function App() {
   return (
     <Router>
       <Navbar />
-      <Routes>
+      <div style={{ minHeight: '100vh' }}>
+        <Routes>
 
-        <Route path="/" element={<Login  />} />
-
-        <Route path="/home" element={<Home />} />
-
-        <Route path="/login" element={<Login />} />
-
-        <Route path="/cadastrousuario" element={<CadastroUsuario/>} />
-
-        <Route path="/temas" element={<ListaTema />} />
-
-        <Route path="/posts" element={<ListaPostagem />} />
+          <Route path="/" element={<Login />} />
 
 
-      </Routes>
+
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/home" element={<Home />} />
+
+          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+
+          <Route path="/temas" element={<ListaTema />} />
+
+          <Route path="/posts" element={<ListaPostagem />} />
+
+          <Route path="/formularioPostagem" element={<CadastroPost />} />
+
+          <Route path="/formularioPostagem/:id" element={<CadastroPost />} />
+
+          <Route path="/formularioTema" element={<CadastroTema />} />
+
+          <Route path="/formularioTema/:id" element={<CadastroTema />} />
+
+          <Route path="/deletarPostagem/:id" element={<DeletarPostagem />} />
+
+          <Route path="/deletarTema/:id" element={<DeletarTema />} />
+
+
+        </Routes>
+      </div>
       <Footer />
-    </Router>
 
+    </Router>
   );
 }
 
