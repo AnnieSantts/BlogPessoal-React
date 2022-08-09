@@ -5,6 +5,9 @@ import Postagem from '../../../models/Postagem';
 import { buscaId, deleteId } from '../../../services/Service';
 import { Box } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { useSelector } from 'react-redux';
+
 
 function DeletarPostagem() {
   let navigate = useNavigate();
@@ -84,7 +87,3 @@ return (
 );
 }
 export default DeletarPostagem;
-
-function useSelector<T, U>(arg0: (state: any) => any) {
-  throw new Error('Function not implemented.');
-}

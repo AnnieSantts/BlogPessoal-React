@@ -1,16 +1,17 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import Postagem from '../../../models/Postagem';
-import { busca } from '../../../services/Service'
-import { Card, CardActions, CardContent, Button, Typography } from '@material-ui/core';
+import React, { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
+import { Box, Card, CardActions, CardContent, Button, Typography } from '@mui/material';
 import './ListaPostagem.css';
-import useLocalStorage from 'react-use-localstorage';
-import { useNavigate } from 'react-router-dom'
-import { Box } from '@mui/material';
+import Postagem from '../../../models/Postagem';
+import { busca } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
-  const [token, setToken] = useLocalStorage('token');
+  const token = useSelector<TokenState, TokenState["tokens"]>(
+    (state) => state.tokens
+  );
   let navigate = useNavigate();
 
   useEffect(() => {
@@ -35,6 +36,7 @@ function ListaPostagem() {
 
   }, [posts.length])
 
+  
   return (
     <>
       {
@@ -60,7 +62,7 @@ function ListaPostagem() {
 
                   <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary" >
+                      <Button variant="contained" className="marginLeft" size='small' color="primary">
                         atualizar
                       </Button>
                     </Box>

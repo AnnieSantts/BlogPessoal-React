@@ -8,13 +8,17 @@ import Login from './paginas/login/Login';
 import CadastroUsuario from './paginas/cadastroUsuario/CadastroUsuario';
 import ListaTema from './componentes/temas/listatema/ListaTema';
 import ListaPostagem from './componentes/postagens/listapostagem/ListaPostagem';
-import CadastroPost from './componentes/postagens/cadastroPost/CadastroPost';
+import CadastroPost from './componentes/postagens/cadastrarPost/CadastrarPost';
 import CadastroTema from './componentes/temas/cadastroTemas/CadastroTemas';
 import DeletarPostagem from './componentes/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './componentes/temas/deletarTema/DeletarTema';
+import { Provider } from 'react-redux';
+import store from './store/Store';
+
 
 function App() {
   return (
+    <Provider store={store}>
     <Router>
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
@@ -52,6 +56,7 @@ function App() {
       <Footer />
 
     </Router>
+    </Provider>
   );
 }
 
