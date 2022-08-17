@@ -1,15 +1,30 @@
 .box1{
-    background-color: #3F51B5;
-    height: 120px;
+    background-image: var(--gradiente-tema);
+    height: 50px;
+    padding-top: 10px;
 }
 
 .box2{
-    background-color: #303F9F;
-    height: 60px;
+    background-image: linear-gradient(90deg, rgb(0, 67, 138) 25%, rgba(191,43,38,1) 75%);
+    height: 30px;
+    color: white;
+    padding-top: 1px;
 }
 
-.redes{
-    font-size: 60px !important;
+.github-icon{
+    font-size: 34px !important;
+    color: white;
+    margin-left: 15px;
+}
+
+.linkedin-icon{
+    font-size: 41px !important;
+    margin: 0 10px;
+    color: white;
+}
+
+.instagram-icon{
+    font-size: 40px !important;
     color: white;
 }
 

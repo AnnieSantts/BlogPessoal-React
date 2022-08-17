@@ -3,6 +3,9 @@
 }
 
 .btnModal{
-    border-color: white !important;
-    background-color: white !important;
+    border-color: white!important;
+    background-color: white!important;
+   color: blue!important;;
+   border-radius: 3px;
+ 
 }

@@ -7,6 +7,7 @@ import { Box } from '@mui/material';
 import { useNavigate, useParams } from 'react-router-dom';
 import { TokenState } from '../../../store/tokens/TokensReducer';
 import { useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 
 
 function DeletarPostagem() {
@@ -19,7 +20,7 @@ function DeletarPostagem() {
 
   useEffect(() => {
       if (token == "") {
-          alert("Você precisa estar logado")
+        toast.error("Você precisa estar logado")
           navigate("/login")
   
       }
@@ -40,17 +41,17 @@ function DeletarPostagem() {
       }
 
       function sim() {
-        navigate('/posts')
+        navigate('/postagens')
           deleteId(`/postagens/${id}`, {
             headers: {
               'Authorization': token
             }
           });
-          alert('Postagem deletada com sucesso');
+          toast.error('Postagem deletada com sucesso');
         }
       
         function nao() {
-          navigate('/posts')
+          navigate('/postagens')
         }
 return (
   <>

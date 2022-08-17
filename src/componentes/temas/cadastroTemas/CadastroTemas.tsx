@@ -3,24 +3,29 @@ import { Container, Typography, TextField, Button } from "@material-ui/core"
 import Tema from '../../../models/Tema';
 import { buscaId, post, put } from '../../../services/Service';
 import { useNavigate, useParams } from 'react-router-dom';
-import useLocalStorage from 'react-use-localstorage';
 import './CadastroTema.css';
-import { Paper } from '@mui/material';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { toast } from 'react-toastify';
+
 
 
 function CadastroTema() {
     let navigate = useNavigate();
     const { id } = useParams<{id: string}>();
-    const [token, setToken] = useLocalStorage('token');
+    const token = useSelector<TokenState, TokenState["tokens"]>(
+        (state) => state.tokens
+      );
     
     const [tema, setTema] = useState<Tema>({
         id: 0,
+        nome: '', 
         descricao: ""
       });
 
     useEffect(() => {
         if(token == ""){
-            alert("Você precisa estar logado para acessar essa página");
+            toast.error("Você precisa estar logado para acessar essa página");
             navigate("/login");
         }
         }, [token]);
@@ -58,37 +63,35 @@ function CadastroTema() {
                         'Authorization': token
                     }
                 })
-                alert('Tema atualizado com sucesso');
+                toast.error('Tema atualizado com sucesso');
             } else {
                 post(`/tema`, tema, setTema, {
                     headers: {
                         'Authorization': token
                     }
                 })
-                alert('Tema cadastrado com sucesso');
+                toast.error('Tema cadastrado com sucesso');
             }
             back()
     
         }
     
         function back() {
-            navigate('/temas')
+            navigate('/tema')
         }
     
     
         return (
-            <Paper className="paper-tema">
-            <Container maxWidth="sm" className="topo container-form-cadastro">
+            <Container maxWidth="sm" className="topo">
                 <form onSubmit={onSubmit}>
                     <Typography variant="h3" color="textSecondary" component="h1" align="center" >Formulário de cadastro tema</Typography>
-                    
-                    <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)} id="descricao" label="Texto" multiline rows={5} variant="outlined" name="descricao" margin="normal" fullWidth />
+                    <TextField value={tema.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}id="nome" label="nome" variant="outlined" name="nome" margin="normal" fullWidth />
+                    <TextField value={tema.descricao} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedTema(e)}id="descricao" label="descricao" variant="outlined" name="descricao" margin="normal" fullWidth />
                     <Button type="submit" variant="contained" color="primary">
                         Finalizar
                     </Button>
                 </form>
             </Container>
-            </Paper>
         )
     }
     

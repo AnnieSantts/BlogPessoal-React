@@ -6,17 +6,18 @@ import Postagem from '../../../models/Postagem';
 import { busca } from '../../../services/Service';
 import { useSelector } from 'react-redux';
 import { TokenState } from '../../../store/tokens/TokensReducer';
+import { toast } from 'react-toastify';
 
 function ListaPostagem() {
   const [posts, setPosts] = useState<Postagem[]>([])
   const token = useSelector<TokenState, TokenState["tokens"]>(
-    (state) => state.tokens
+   (state) => state.tokens
   );
-  let navigate = useNavigate();
 
+let navigate = useNavigate();
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado")
+      toast.error("Você precisa estar logado")
       navigate("/login")
 
     }
@@ -63,14 +64,14 @@ function ListaPostagem() {
                   <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
                       <Button variant="contained" className="marginLeft" size='small' color="primary">
-                        atualizar
+                        Atualizar
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
                       <Button variant="contained" size='small' color="secondary">
-                        deletar
+                        Deletar
                       </Button>
                     </Box>
                   </Link>

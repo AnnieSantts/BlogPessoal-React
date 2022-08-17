@@ -1,22 +1,13 @@
-import React, { ChangeEvent, useEffect, useState } from "react";
-import {
-  Container,
-  Typography,
-  TextField,
-  Button,
-  Select,
-  InputLabel,
-  MenuItem,
-  FormControl,
-  FormHelperText,
-} from "@mui/material";
-import "./CadastrarPost.css";
-import { useNavigate, useParams } from "react-router-dom";
-import Tema from "../../../models/Tema";
-import Postagem from "../../../models/Postagem";
-import { busca, buscaId, post, put } from "../../../services/Service";
-import { useSelector } from "react-redux";
-import { TokenState } from "../../../store/tokens/TokensReducer";
+import React, { ChangeEvent, useEffect, useState } from 'react'
+import { Container, Typography, TextField, Button, Select, InputLabel, MenuItem, FormControl, FormHelperText } from "@material-ui/core"
+import './CadastrarPost.css';
+import { useNavigate, useParams } from 'react-router-dom';
+import Tema from '../../../models/Tema';
+import Postagem from '../../../models/Postagem';
+import { busca, buscaId, post, put } from '../../../services/Service';
+import { useSelector } from 'react-redux';
+import { TokenState } from '../../../store/tokens/TokensReducer';
+import { toast } from "react-toastify";
 
 function CadastrarPost() {
   let navigate = useNavigate();
@@ -28,14 +19,15 @@ function CadastrarPost() {
 
   useEffect(() => {
     if (token == "") {
-      alert("Você precisa estar logado");
+      toast.error("Você precisa estar logado");
       navigate("/login");
     }
   }, [token]);
 
   const [tema, setTema] = useState<Tema>({
     id: 0,
-    descricao: "",
+    nome: '',
+    descricao: ''
   });
   const [postagem, setPostagem] = useState<Postagem>({
     id: 0,
@@ -91,14 +83,14 @@ function CadastrarPost() {
           Authorization: token,
         },
       });
-      alert("Postagem atualizada com sucesso");
+      toast.error("Postagem atualizada com sucesso");
     } else {
       post(`/postagens`, postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
       });
-      alert("Postagem cadastrada com sucesso");
+      toast.error("Postagem cadastrada com sucesso");
     }
     back();
   }
@@ -123,6 +115,7 @@ function CadastrarPost() {
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
           id="titulo"
           label="titulo"
+          required
           variant="outlined"
           name="titulo"
           margin="normal"
@@ -133,6 +126,7 @@ function CadastrarPost() {
           onChange={(e: ChangeEvent<HTMLInputElement>) => updatedPostagem(e)}
           id="texto"
           label="texto"
+          required
           name="texto"
           variant="outlined"
           margin="normal"
@@ -141,9 +135,11 @@ function CadastrarPost() {
 
         <FormControl>
           <InputLabel id="demo-simple-select-helper-label">Tema </InputLabel>
+         
           <Select
             labelId="demo-simple-select-helper-label"
             id="demo-simple-select-helper"
+            required
             onChange={(e) =>
               buscaId(`/tema/${e.target.value}`, setTema, {
                 headers: {

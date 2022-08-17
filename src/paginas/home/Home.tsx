@@ -2,6 +2,7 @@ import { Grid, Box, Typography, Button } from "@mui/material";
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import ModalPostagens from "../../componentes/postagens/modalPostagem/ModalPostagem";
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 import { TokenState } from "../../store/tokens/TokensReducer";
@@ -14,8 +15,8 @@ function Home() {
   );
 
   useEffect(() => {
-    if (token == "") {
-      alert("Você precisa estar logado");
+    if (token === "") {
+      toast.error("Você precisa estar logado");
       navigate("/login");
     }
   }, [token]);
@@ -39,7 +40,7 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Seja bem vindo(a)!
+              Seja bem-vindo!
             </Typography>
             <Typography
               variant="h5"
@@ -49,7 +50,7 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Expresse aqui os seus pensamentos e opiniões musicais!
+              Expresse aqui os seus pensamentos e opiniões!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
@@ -57,7 +58,7 @@ function Home() {
               <ModalPostagens />
             </Box>
             <Link to="/postagens" className="text-decorator-none">
-            <Button variant="outlined" className="btn">
+            <Button variant='outlined' className='botao' style={{  backgroundColor: 'blue', color: 'blue'}}>
               Ver Postagens
               </Button>
               </Link>
