@@ -1,10 +1,11 @@
 import React from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
 import Modal from '@mui/material/Modal';
-import {Button,Box } from "@mui/material"
+import {Box } from "@mui/material"
 import CloseIcon from '@material-ui/icons/Close';
 import './ModalPostagem.css';
 import CadastrarPost from '../cadastrarPost/CadastrarPost';
+import { Button } from '@material-ui/core';
 
 function getModalStyle() {
   const top = 50 ;
@@ -58,6 +59,7 @@ function ModalPostagens () {
   return (
     <div>
       <Button
+        variant="contained"
         className="btnModal"
         onClick={handleOpen}>Nova Postagem</Button>
       <Modal

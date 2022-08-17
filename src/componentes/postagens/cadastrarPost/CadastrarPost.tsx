@@ -120,6 +120,7 @@ function CadastrarPost() {
           name="titulo"
           margin="normal"
           fullWidth
+          inputProps={{ maxLength: 100,minLength: 5  }}
         />
         <TextField
           value={postagem.texto}
@@ -131,6 +132,7 @@ function CadastrarPost() {
           variant="outlined"
           margin="normal"
           fullWidth
+          inputProps={{ maxLength: 500,minLength: 5  }}
         />
 
         <FormControl>
