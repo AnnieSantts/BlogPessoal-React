@@ -46,7 +46,7 @@ function DeletarTema() {
               'Authorization': token
             }
           });
-          toast.error('Tema deletado com sucesso');
+          toast.success('Tema deletado com sucesso');
         }
       
         function nao() {

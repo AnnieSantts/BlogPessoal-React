@@ -19,6 +19,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 function App() {
+  toast.configure()
   return (
     <Provider store={store}>
     <Router>

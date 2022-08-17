@@ -3,7 +3,7 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import "./Login.css";
 import UserLogin from "../../models/UserLogin";
-import { api, login } from "../../services/Service";
+import { login } from "../../services/Service";
 import { useDispatch } from "react-redux";
 import { addToken } from "../../store/tokens/Actions";
 import { toast } from "react-toastify";
@@ -89,6 +89,8 @@ function Login() {
               name="usuario"
               margin="normal"
               fullWidth
+              required
+              inputProps={{ minLength: 4, maxLength: 50  }}
             />
             <TextField
               value={userLogin.senha}
@@ -100,6 +102,8 @@ function Login() {
               margin="normal"
               type="password"
               fullWidth
+              required
+              inputProps={{ minLength: 6, maxLength: 15  }}
             />
             <Box marginTop={2} textAlign="center">
               <Button type="submit" className="btnModal">

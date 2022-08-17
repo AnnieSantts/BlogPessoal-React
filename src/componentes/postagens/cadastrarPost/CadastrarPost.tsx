@@ -83,14 +83,14 @@ function CadastrarPost() {
           Authorization: token,
         },
       });
-      toast.error("Postagem atualizada com sucesso");
+      toast.success("Postagem atualizada com sucesso");
     } else {
       post(`/postagens`, postagem, setPostagem, {
         headers: {
           Authorization: token,
         },
       });
-      toast.error("Postagem cadastrada com sucesso");
+      toast.success("Postagem cadastrada com sucesso");
     }
     back();
   }

@@ -47,7 +47,7 @@ function DeletarPostagem() {
               'Authorization': token
             }
           });
-          toast.error('Postagem deletada com sucesso');
+          toast.success('Postagem deletada com sucesso');
         }
       
         function nao() {
