@@ -17,6 +17,7 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
+            email: '',
             senha: ''
         })
 
@@ -25,6 +26,7 @@ function CadastroUsuario() {
             id: 0,
             nome: '',
             usuario: '',
+            email: '',
             senha: ''
         })
 
@@ -66,6 +68,7 @@ function CadastroUsuario() {
                         <Typography variant='h3' gutterBottom color='textPrimary' component='h3' align='center' className='textos2'>Cadastrar</Typography>
                         <TextField inputProps={{ minLength: 4, maxLength: 50  }} required value={user.nome} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='nome' label='Nome' variant='outlined' name='nome' margin='normal' fullWidth />
                         <TextField inputProps={{ minLength: 4, maxLength: 50  }} required value={user.usuario} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='usuario' label='Usuario' variant='outlined' name='usuario' margin='normal' fullWidth />
+                        <TextField required value={user.email} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='email' label='E-mail' variant='outlined' name='email' margin='normal' type='email' fullWidth />
                         <TextField inputProps={{ minLength: 6, maxLength: 15  }} required value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField inputProps={{ minLength: 6, maxLength: 15  }} required value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
