@@ -108,7 +108,7 @@ function CadastrarPost() {
           component="h1"
           align="center"
         >
-          Formulário de cadastro postagem
+          Cadastrar postagem
         </Typography>
         <TextField
           value={postagem.titulo}
