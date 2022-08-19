@@ -102,9 +102,8 @@ function CadastrarPost() {
   return (
     <Container maxWidth="sm" className="topo">
       <form onSubmit={onSubmit}>
-        <Typography
-          variant="h3"
-          color="textSecondary"
+        <Typography className='cadPost'
+          variant="h5"
           component="h1"
           align="center"
         >

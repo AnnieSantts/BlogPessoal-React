@@ -16,14 +16,14 @@ function Footer() {
 
   if (token != "") {
     footerComponent = (
-      <Grid
+      <Grid className="box2"
         container
         direction="row"
         justifyContent="center"
         alignItems="center"
       >
-        <Grid alignItems="center" item xs={12}>
-          <Box className="box1">
+        <Grid alignItems="center" item xs={12} style={{backgroundColor: "black"}}>
+          <Box className="box1" style={{backgroundColor: "black"}}>
             <Box
               paddingTop={0.5}
               display="flex"

@@ -33,18 +33,14 @@ function Navbar() {
 
   if (token != "") {
     navbarComponent =
-      <AppBar position="static">
-        <Toolbar variant="dense" style={{ display: "flex", justifyContent: "space-between", backgroundColor: "dark-blue" }}>
+      <AppBar position="static" >
+        <Toolbar className="barra" variant="dense" style={{ display: "flex", justifyContent: "space-between", backgroundColor: "dark-blue" }}>
           <Box display="flex" justifyContent="start" style={{ cursor: "pointer" }} >
-            <Typography variant="h5" color="inherit">
-              BlogPessoal
-            </Typography>
-
 
             <Link to="home" className='text-decorator-none'>
               <Box mx={1} style={{ cursor: "pointer" }}>
                 <Typography variant="h6" color="inherit">
-                  Home
+                  JornadaDev
                 </Typography>
               </Box>
             </Link>
@@ -69,6 +65,14 @@ function Navbar() {
               <Box mx={1} style={{ cursor: "pointer" }}>
                 <Typography variant="h6" color="inherit">
                   Cadastrar Tema
+                </Typography>
+              </Box>
+            </Link>
+
+            <Link to='/sobre' className='text-decorator-none'>
+              <Box mx={1} style={{ cursor: "pointer" }}>
+                <Typography variant="h6" color="inherit">
+                  Sobre nós
                 </Typography>
               </Box>
             </Link>

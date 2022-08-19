@@ -7,6 +7,7 @@ import ModalPostagens from "../../componentes/postagens/modalPostagem/ModalPosta
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import "./Home.css";
+import imgHome from "../../assets/imgHome.png" 
 
 function Home() {
   let navigate = useNavigate();
@@ -50,7 +51,7 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Expresse aqui os seus pensamentos e opiniões!
+              Compartilhe aqui sua jornada Dev!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
@@ -66,7 +67,7 @@ function Home() {
         </Grid>
         <Grid item xs={6}>
           <img
-            src="https://img.freepik.com/free-vector/rock-band-concept-illustration_114360-2835.jpg?w=740&t=st=1658934530~exp=1658935130~hmac=fac99ac1e4621381f643c7f5b3c23fc344be826c538b2d29ff9d08cea3766b17"
+            src={imgHome}
             alt=""
             width="500px"
             height="350px"

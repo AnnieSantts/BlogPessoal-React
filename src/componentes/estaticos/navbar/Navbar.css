@@ -4,11 +4,6 @@
   }
   
   .barra {
-    background: blue;
-    background: linear-gradient(
-      90deg,
-      rgba(39, 63, 64, 1) 0%,
-      rgba(239, 189, 158, 1) 35%,
-      rgb(231, 227, 226) 100%
-    );
+    background: #05445E;
+    
   }

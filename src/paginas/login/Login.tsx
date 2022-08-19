@@ -41,27 +41,27 @@ function Login() {
       await login(`/usuarios/logar`, userLogin, setToken)
 
       toast.success("Usuário logado com sucesso.", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: "dark",
-          progress: undefined,
-        });
-  }
-  catch (error) {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "dark",
+        progress: undefined,
+      });
+    }
+    catch (error) {
       toast.error("Dados do usuário inconsistentes. Erro ao logar!", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: false,
-          draggable: false,
-          theme: "dark",
-          progress: undefined,
-        });         
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "dark",
+        progress: undefined,
+      });
     }
   }
 
@@ -90,7 +90,7 @@ function Login() {
               margin="normal"
               fullWidth
               required
-              inputProps={{ minLength: 4, maxLength: 50  }}
+              inputProps={{ minLength: 4, maxLength: 50 }}
             />
             <TextField
               value={userLogin.senha}
@@ -103,7 +103,7 @@ function Login() {
               type="password"
               fullWidth
               required
-              inputProps={{ minLength: 6, maxLength: 15  }}
+              inputProps={{ minLength: 6, maxLength: 15 }}
             />
             <Box marginTop={2} textAlign="center">
               <Button type="submit" className="btnModal">
@@ -112,15 +112,19 @@ function Login() {
             </Box>
           </form>
           <Box display='flex' justifyContent='center' marginTop={2}>
-                        <Box marginRight={1}>
-                            <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
-                        </Box>
-                        <Link to="/cadastrousuario">
-                            <Typography variant="subtitle1" gutterBottom align="center" style={{ fontWeight: 'bold' }} >Cadastre-se</Typography>
-                        </Link>
-                    </Box>
-                </Box>
-            </Grid>
+            <Box marginRight={1}>
+             
+                <Typography variant='subtitle1' gutterBottom align='center'>Não tem uma conta?</Typography>
+            
+            </Box>
+            <Link to="/cadastrousuario">
+              <button>
+              <Typography variant="subtitle1" gutterBottom align="center" style={{ fontWeight: 'bold' }} >Cadastre-se</Typography>
+              </button>
+            </Link>
+          </Box>
+        </Box>
+      </Grid>
 
       <Grid xs={6} className="imagem"></Grid>
     </Grid>

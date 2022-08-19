@@ -63,14 +63,14 @@ let navigate = useNavigate();
 
                   <Link to={`/formularioPostagem/${post.id}`} className="text-decorator-none" >
                     <Box mx={1}>
-                      <Button variant="contained" className="marginLeft" size='small' color="primary">
+                      <Button variant="contained" className="marginLeft" size='small'>
                         Atualizar
                       </Button>
                     </Box>
                   </Link>
                   <Link to={`/deletarPostagem/${post.id}`} className="text-decorator-none">
                     <Box mx={1}>
-                      <Button variant="contained" size='small' color="secondary">
+                      <Button className="botaoDeletar" variant="contained" size='small' color="secondary">
                         Deletar
                       </Button>
                     </Box>
