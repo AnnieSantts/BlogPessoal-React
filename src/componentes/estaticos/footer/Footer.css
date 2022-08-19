@@ -1,13 +1,14 @@
 .box1{
     background-image: var(--gradiente-tema);
+    background-color: #75E6DA!important;
     height: 50px;
     padding-top: 10px;
 }
 
 .box2{
-    background: image #a1c1c7!important;;
+    background: image #a1c1c7!important;
     height: 30px;
-    color: #05445E;
+    color: #D4F1F4;
     padding-top: 1px;
 }
 

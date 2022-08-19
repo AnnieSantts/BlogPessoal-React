@@ -1,5 +1,5 @@
 .imagem2{
-    background-image: url(https://i.imgur.com/d5bMdDJ.jpg);
+    background-image: url(https://conteudo.mercadopago.com.br/hubfs/imagens/blog/mp_blog_mulher_computador_sorrindo.jpg);
     background-repeat: no-repeat;
     width: 100vh;
     min-height: 100vh;
@@ -13,4 +13,9 @@
 
 .btnCancelar{
     margin-left: 20px !important;
+    background-color: #189AB4!important;
+}
+
+.btCadastrar{
+    background-color: #05445E!important;
 }

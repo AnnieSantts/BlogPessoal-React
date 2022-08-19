@@ -72,7 +72,7 @@ function CadastroUsuario() {
                         <TextField inputProps={{ minLength: 6, maxLength: 15  }} required value={user.senha} onChange={(e: ChangeEvent<HTMLInputElement>) => updatedModel(e)} id='senha' label='Senha' variant='outlined' name='senha' margin='normal' type='password' fullWidth />
                         <TextField inputProps={{ minLength: 6, maxLength: 15  }} required value={confirmarSenha} onChange={(e: ChangeEvent<HTMLInputElement>) => confirmarSenhaHandle(e)} id='confirmarSenha' label='Confirmar senha' variant='outlined' name='confirmarSenha' margin='normal' type='password' fullWidth />
                         <Box marginTop={2} textAlign='center'>
-                            <Button type='submit' variant='contained' color='primary'>
+                            <Button className="btCadastrar" type='submit' variant='contained' color='primary'>
                                 Cadastrar
                             </Button>
                             <Link to='/login' className='text-decorator-none'>

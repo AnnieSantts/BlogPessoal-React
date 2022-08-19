@@ -78,7 +78,7 @@ function Login() {
               align="center"
               className="textosFooter"
             >
-              Entrar
+              Jornada Dev
             </Typography>
             <TextField
               value={userLogin.usuario}
@@ -118,9 +118,9 @@ function Login() {
             
             </Box>
             <Link to="/cadastrousuario">
-              <button>
+             
               <Typography variant="subtitle1" gutterBottom align="center" style={{ fontWeight: 'bold' }} >Cadastre-se</Typography>
-              </button>
+            
             </Link>
           </Box>
         </Box>

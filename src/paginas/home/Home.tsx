@@ -7,7 +7,7 @@ import ModalPostagens from "../../componentes/postagens/modalPostagem/ModalPosta
 import TabPostagem from "../../componentes/postagens/tabpostagem/TabPostagem";
 import { TokenState } from "../../store/tokens/TokensReducer";
 import "./Home.css";
-import imgHome from "../../assets/imgHome.png" 
+import fthome from "../../assets/fthome.png" 
 
 function Home() {
   let navigate = useNavigate();
@@ -67,9 +67,9 @@ function Home() {
         </Grid>
         <Grid item xs={6}>
           <img
-            src={imgHome}
+            src={fthome}
             alt=""
-            width="500px"
+            width="600px"
             height="350px"
           />
         </Grid>
